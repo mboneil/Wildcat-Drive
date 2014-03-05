@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+	<link rel="stylesheet" type= "text/css" href="prototype.css"></link>
+	<link rel="stylesheet" type= "text/css" href="foundation.css"></link>
+	<link rel="stylesheet" href="foundation-topbar.css" />
+	<script src="jquery-1.11.0.js"></script>
+	<script src= "foundation.js"></script>
+	<script src = "prototype.js"></script>
+	<script src="js/vendor/modernizr.js"></script>
+	
+</head>
+<title> WildcatDrive </title>
+<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRnRe5GASu8R5Y3ckJupdSjhN79ZmA5eg&sensor=false"></script>
+<body>
+	<!--menu bar-->
+	<nav class="top-bar" data-topbar> 
+		<section class="top-bar-section"> 
+			<!-- Right Nav Section --> 
+			<ul class="right">
+				<li><a href="#">About</a>
+				</li>  
+				<li class="active">
+					<a href="Login Page.html">Login</a>
+				</li> 
+			</ul> 
+			<!-- Left Nav Section --> 
+			<ul class="left"> 
+				<li><img src="easystreet.png"></li>
+			</ul> 
+		</section> 
+	</nav>
+
+	<!--filter button+modal-->
+	<div id="filterModal" class="reveal-modal" class="ModalBox" data-reveal>
+		<form class="filter">
+			<div class="row">
+				<div class="large-6 columns">
+					<label>Point A
+						<input type="text" place-holder="large-4.columns" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+					<label>Point B
+						<input type="text" place-holder="large-4.columns" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns" "input-append date" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+					<label>Date Range:
+						<input class="datepicker" id="dp1" place-holder="large-4.columns" />
+						to
+						<input class="datepicker" id="dp2" place-holder="large-4.columns" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+					<label>Travel Time:</label>
+					<input id="morning" type="checkbox">
+					<label for="morning">Morning</label>
+					<input id="afternoon" type="checkbox">
+					<label for="afternoon">Afternoon</label>
+					<input id="evening" type="checkbox">
+					<label for="evening">Evening</label>
+					<input id="night" type="checkbox">
+					<label for="night">Night</label>
+				</div>
+			</div>
+		</form>	
+		<a class="close-reveal-modal">&#215;</a>
+		<div class="button close-reveal-modal">Filter</div>
+	</div>
+	<a data-reveal-id="filterModal">
+		<div class="button">FILTER</div>
+	</a>
+
+
+	<!--post ride-->
+	<!--filter button+modal-->
+	<div id="postModal" class="reveal-modal" class="ModalBox" data-reveal>
+		<form class="post">
+			<div class="row">
+				<div class="large-6 columns">
+					<input type="radio" id="driver">
+					<label for="driver">Driver</label>
+					<input type="radio" id="cabshare">
+					<label for="cabshare">Cab Share</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+					<label>Point A
+						<input type="text" place-holder="large-4.columns" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+					<label>Point B
+						<input type="text" place-holder="large-4.columns" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns" "input-append date" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+					<label>Date Range:
+						<input class="datepicker" id="dp1" place-holder="large-4.columns" />
+						to
+						<input class="datepicker" id="dp2" place-holder="large-4.columns" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+					<label>Travel Time:</label>
+					<input id="morning" type="checkbox">
+					<label for="morning">Morning</label>
+					<input id="afternoon" type="checkbox">
+					<label for="afternoon">Afternoon</label>
+					<input id="evening" type="checkbox">
+					<label for="evening">Evening</label>
+					<input id="night" type="checkbox">
+					<label for="night">Night</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-4 columns">
+					<label>Type of Car
+						<input type="text"/>
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-4 columns">
+					<label>How much will you charge passengers?
+						<input type="text"/>
+					</label>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="large-6 columns"> 
+					<label>Luggage Space</label>  
+					<input type="radio" id="small">
+					<label for="small">Small</label> 
+					<input type="radio" id="medium">
+					<label for="medium">Medium</label> 
+					<input type="radio" id="large">
+					<label for="large">Large</label> 
+				</div> 
+			</div>
+			<div class="row"> 
+				<div class="large-6 columns"> 
+					<label>Are you willing to make stops along the way?</label>  
+					<input type="radio" id="yes">
+					<label for="yes">Yes</label> 
+					<input type="radio" id="no">
+					<label for="no">No</label> 
+				</div> 
+			</div>
+			<div class="row"> 
+				<div class="large-12 columns"> 
+					<label>Other information 
+						<input type="text"> 
+					</label> 
+				</div> 
+			</div> 
+			<button type="submit" class="button right">Submit</button>
+		</form>	
+		<a class="close-reveal-modal">&#215;</a>
+		<div class="button close-reveal-modal">Post</div>
+	</div>
+	<a data-reveal-id="postModal">
+		<div class="button">POST</div>
+	</a>
+
+	<!-- <h2>Here</h2>
+
+	<div id ="firstModal" class="reveal-modal" data-reveal>
+		<h2>This is a modal</h2>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<div>
+	<a class = "reveal-modal" class = "MainBox" data-reveal-id="firstModal">
+			<button>CLick me</button>
+			<img src = "http://www.google.com/mapfiles/markerA.png" alt = "Map Marker" width = "15" height = "25"></img>          2232 Sherman Avenue, Evanston, IL <br>
+			<img src = "http://www.google.com/mapfiles/markerB.png" alt = "Map Marker" width = "15" height = "25"></img>
+					   986 Forest Road, New Haven, CT<br>
+			Date:	March 18, 2014<br>
+			Time:                     2 PM
+
+	</a>
+</div> 
+MAP HERE-->
+
+<div id="map">
+</div>
+
+
+<!-- Result of when click on box -->
+<div id="myModal" class="reveal-modal" class= "ModalBox" data-reveal>
+	<div id="static">
+		<img class = "mapstatic" id = "first_map"/>
+		<img src = "letter_a.png" alt = "Map Marker" width = "15" height = "25"></img>          2232 Sherman Avenue, Evanston, IL <br><br>
+		<img src = "letter_B.png" alt = "Map Marker" width = "15" height = "25"></img>
+		986 Forest Road, New Haven, CT<br><br>
+		Date: &nbsp &nbsp March 18, 2014<br><br>
+		Time: &nbsp &nbsp 2 PM
+		<!-- added in to put pic of map on card -->
+	</div>
+
+	<!--<div id="static">
+		<img class = "mapstatic" id = "first_map"/>
+	</div>-->
+
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+<!-- Clickable DIV/Box -->
+<a href="#" data-reveal-id="myModal">
+	<div class="MainBox">
+
+		<!-- CLickable stuff here -->
+		<img src = "letter_a.png" alt = "Map Marker" width = "15" height = "25"></img>          2232 Sherman Avenue, Evanston, IL <br>
+		<img src = "letter_b.png" alt = "Map Marker" width = "15" height = "25"></img>
+		986 Forest Road, New Haven, CT<br>
+		Date:	March 18, 2014<br>
+		Time: 2 PM
+	</div>
+</a> 
+
+<div id="myModal" class="reveal-modal" class= "ModalBox" data-reveal>
+	<div id="static">
+		<img class = "mapstatic" id = "first_map"/>
+		<img src = "letter_a.png" alt = "Map Marker" width = "15" height = "25"></img>          711 University Pl, Evanston, IL <br><br>
+		<img src = "letter_B.png" alt = "Map Marker" width = "15" height = "25"></img>
+		636 Emerson St, Evanston, IL<br><br>
+		Date: &nbsp &nbsp July 27, 2014<br><br>
+		Time: &nbsp &nbsp 3 AM
+		<!-- added in to put pic of map on card -->
+	</div>
+
+	<!--<div id="static">
+		<img class = "mapstatic" id = "first_map"/>
+	</div>-->
+
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+<!-- Clickable DIV/Box -->
+<a href="#" data-reveal-id="myModal">
+	<div class="MainBox">
+
+		<!-- CLickable stuff here -->
+		<img src = "letter_a.png" alt = "Map Marker" width = "15" height = "25"></img>          711 University Pl, Evanston, IL <br>
+		<img src = "letter_b.png" alt = "Map Marker" width = "15" height = "25"></img>
+		636 Emerson St, Evanston, IL<br>
+		Date:	July 27, 2014<br>
+		Time: 3 PM
+	</div>
+</a> 
+
+<script src ="prototype.js"></script>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/fastclick.js"></script>
+<script src="js/foundation.min.js"></script>
+
+<script>
+$(document).foundation();
+</script>
+
+
+</body>
+</html>
