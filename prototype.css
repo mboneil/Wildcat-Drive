@@ -1,0 +1,78 @@
+.btn{
+	width: 47px;
+	height: 28px;
+	margin:.5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	background-color: blue;
+	padding: 1px;
+}
+
+#new-row{
+	display: block;
+	clear: both;
+}
+#iconFrom{
+	
+}
+.MainBox{
+	width: 350px;
+	height: 100px;
+	background-color: white;
+	border-style: outset;
+	border-color: black;
+
+	border-width: 1px;
+	border-radius: 3px;
+	padding-left: 10px;
+	padding-top: 10px;
+	font: sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #303030;
+	-webkit-box-shadow: 10px 10px 5px -3px rgba(46,46,46,1);
+-moz-box-shadow: 10px 10px 5px -3px rgba(46,46,46,1);
+box-shadow: 10px 10px 5px -3px rgba(46,46,46,1);
+}
+
+.ModalBox{
+	width: 580px;
+	height: 300px;
+	background-color: #F0F0F0;
+	border-style: outset;
+	border-color: black;
+	border-width: 1px;
+	border-radius: 3px;
+	padding-left: 10px;
+	display: normal;
+	position: absolute;
+	padding-top: 10px;
+	font: sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #303030;
+	text-align: center;
+}
+
+#map 
+	{ 
+		float:right;
+		margin-right: 45px;
+		height: 200px;
+		width:250px;
+		border-radius: 15px;
+		border-style: solid;
+		border-color: gray;
+	}
+
+	.mapstatic
+	{
+
+		float: right;
+		border-style: solid;
+		border-color: black;
+		border-width: 1px;
+		border-radius: 15px;
+		border-style: solid;
+		border-color: black;
+	}
